@@ -5,23 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scheduled Maintenance</title>
 <style>
-        /* Fully resets and forces background across the entire frame */
+        /* Force full takeover of the iframe document space */
         html, body {
             margin: 0;
             padding: 0;
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            height: 100vh;
             background-color: #f4f4f4;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            overflow: hidden;
         }
-        
-        /* Absolute screen takeover that ignores parent container squishing */
-        .maintenance-wrapper {
-            position: absolute;
+
+        /* Fixed viewport wrapper that ignores parent container layout bugs */
+        .page-wrapper {
+            position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -35,7 +36,7 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             text-align: center;
             max-width: 500px;
-            width: 85%;
+            width: 90%;
             box-sizing: border-box;
         }
 
